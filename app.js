@@ -6,4 +6,13 @@ let server = app.listen(3000, function(){
     console.log('Servidor online')
 })
 
-require('socket.io').listen(server)
+let io = require('socket.io').listen(server)
+
+// Criar conexão por websocket
+io.on('connection', function(socket){
+    console.log('Usuário conectou')
+
+    socket.on('disconnect', function(){
+        console.log('Usuário se desconectou')
+    })
+})
