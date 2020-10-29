@@ -8,6 +8,8 @@ let server = app.listen(3000, function(){
 
 let io = require('socket.io').listen(server)
 
+app.set('io', io)
+
 // Criar conexão por websocket
 io.on('connection', function(socket){
     console.log('Usuário conectou')
