@@ -20,5 +20,5 @@ module.exports.startChat = function(application, req, res) {
     )
     
     
-    res.render('chat')
+    res.render('chat', {dataForm: dataForm})
 }
